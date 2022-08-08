@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <!-- v-bind:href="link.href" | v-bind:target="link.target"-->
+        <a :href="link.href" :target="link.target">{{link.text}}</a>
+        <div :id="box.id" :class="box.class" :style="box.style"></div>
+        <!-- v-on:click="showAlert" | v-on:click="changeMessage('...')" -->
+        <button @click="showAlert">Show Alert</button>
+        <button @click="changeMessage('second message')">Change Message</button>
+        <div class="box" @mousemove="updateCords"></div>
+        <span>{{cords.x}} | {{cords.y}}</span>
+        <div class="box" @mousemove="updateCords2('param', $event)"></div>
+        <span>{{cords.x}} | {{cords.y}}</span>
+
+        <input type="text" :value="inputValue" @input="logInputValue">
+        <span>{{inputValue}}</span>
+
+        <!-- one line js code -->
+        <input type="text" @input="inputValue = $event.target.value">
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

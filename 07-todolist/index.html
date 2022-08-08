@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .completed {
+            background-color: green;
+        }
+        
+        .uncompleted {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="newTodo" @keydown.enter="addTodo(newTodo)">
+
+        <ul>
+            <li v-if="todoList.length>0" v-for="(todo, index) in todoList" :key="todo">
+                <input type="checkbox" v-model="todo.done" @change="toggleTodo(todo.done)">
+                <span :class="{completed: todo.done, uncompleted: !todo.done}"> {{ index + 1 }}. {{ todo.text }}</span>
+                <button @click="removeTodo(todo)">Sil</button>
+            </li>
+            <li v-else>Kayit Yok</li>
+        </ul>
+        <span>Tamamlanan {{doneTodoCount}}</span>
+        <span>Kalan {{unDoneTodoCount}}</span>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

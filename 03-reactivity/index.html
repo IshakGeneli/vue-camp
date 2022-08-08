@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <span>{{counter}}</span>
+        <button @click="increment">+</button>
+        <!-- <button @click="counter++">+</button> -->
+
+        <button @click="decrement">-</button>
+        <!-- <span>{{getResult()}}</span>  From methods in app.js-->
+        <span>{{getResult}}</span>
+        <!-- getResult From computed in app.js -->
+        <br>
+
+        <span>{{counter2}}</span>
+        <button @click="increment2">+</button>
+        <!-- <button @click="counter++">+</button> -->
+
+        <button @click="decrement2">-</button>
+        <!-- <span>{{getResult2()}}</span> From methods in app.js -->
+        <span>{{getResult2}}</span>
+        <!-- getResult2 From computed in app.js -->
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
